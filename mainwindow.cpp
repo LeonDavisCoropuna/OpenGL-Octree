@@ -196,20 +196,20 @@ void MainWindow::paintGL()
     glRotatef(cCircle.y*100,1,0,0);
     pressLB = false;
     glBegin(GL_POINTS);
-    glColor3d(0,0,255);
+    glColor3d(10,100,88);
     for(int i=0;i<int(pointsW.size());i++){
         glVertex3d(pointsW[i]->x,pointsW[i]->y,pointsW[i]->z);
     }
     glEnd();
     glBegin(GL_POINTS);
-    glColor3d(0,255,0);
+    glColor3d(0,255,255);
     for(int i=0;i<int(pSelec.size());i++){
 
         glVertex3d(pSelec[i]->x,pSelec[i]->y,pSelec[i]->z);
     }
     glEnd();
     glBegin(GL_LINES);
-    glColor3d(255,0,0);
+    glColor3d(180,90,0);
     for(int i=0;i<int(linesA.size());i++){
 
         glVertex3d(linesA[i].x,linesA[i].y,linesA[i].z);

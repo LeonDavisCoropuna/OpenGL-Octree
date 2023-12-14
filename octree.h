@@ -142,10 +142,6 @@ public:
         return true;
     }
 
-    void printQ(){
-        qDebug() << data.size() << " tamanio";
-    }
-
     bool leaf;
     Point dimMax;
     Point dimMin;
@@ -154,7 +150,7 @@ public:
 private:
 
     bool stopCond(){
-        if(data.size() >= 1){
+        if(data.size() >= 50){
             return true;
         }
         return false;

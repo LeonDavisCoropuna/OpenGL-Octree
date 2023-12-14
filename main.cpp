@@ -22,7 +22,7 @@ void Read(QString Filename, QVector<float> &vector) {
 
 
         for (int i = 0; i < strList.length(); i++) {
-            vector.push_back(strList[i].toFloat()/2);
+            vector.push_back(strList[i].toFloat()/200);
         }
     }
 
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
     QVector<float> dat;
 
-    QString mFilename = "/home/leon/Documentos/eda/Octree/puntos3d/rex.csv";
+    QString mFilename = "/home/leon/Documentos/eda/Octree/data/points2.csv";
 
 
     Read(mFilename,dat);
@@ -47,18 +47,19 @@ int main(int argc, char *argv[])
     for(int i=0; i<dat.size()-3; i=i+3)
     {
         w.qTree->insert(new Point(dat[i],(dat[i+1]),dat[i+2]));
-        w.pointsW.push_back(new Point(dat[i],(dat[i+1]),dat[i+2]));
+        //mostrar los puntos
+        //w.pointsW.push_back(new Point(dat[i],(dat[i+1]),dat[i+2]));
     }
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> diff = end-start;
 
-    qDebug() << diff.count() << " s\n";
+    qDebug() << "Tiempo de insersion: " << diff.count() << " s\n";
 
     w.paintGL();
 
-    w.setTitle("OpenGL QT");
-    w.resize(680,680);
+    w.setTitle("Octree - Leon Davis");
+    w.resize(800,800);
     w.show();
 
     return a.exec();

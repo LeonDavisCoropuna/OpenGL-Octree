@@ -1,1 +1,2 @@
-# Octree en C++ usando OpenGL y Qt
+# OcTree en c++ usando OpenGL y QT
+# Leon Felipe Davis Coropuna
